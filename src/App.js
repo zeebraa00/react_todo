@@ -17,9 +17,11 @@ class App extends Component {
   }
 
   handleChange = (e) => {
+    console.log('형 힘내세요')
+    console.log(e);
     this.setState({
     // input 의 다음 바뀔 값(value) 상태 업데이트
-      _____________________
+      input: e.target.value 
     });
   }
 
@@ -46,18 +48,19 @@ class App extends Component {
   handleToggle = (id) => {
     const { todos } = this.state;
 
+    // 파라미터로 받은 id 를 가지고 몇번째 아이템인지 찾습니다.
     const index = todos.findIndex(todo => todo.id === id);
-    const selected = todos[index];
+    const selected = todos[index]; // 선택한 객체
 
     // 전개 연산자를 이용해서 배열 복사하기
-    ____________________________
+    const nextTodos = [...todos];
 
+    // 기존의 값들을 복사하고, checked 값을 덮어쓰기
     nextTodos[index] = { 
       ...selected, 
       checked: !selected.checked
     };
 
-    // 
     this.setState({
       todos: nextTodos
     });
