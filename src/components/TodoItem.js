@@ -11,7 +11,8 @@ class TodoItem extends Component {
           e.stopPropagation(); // onToggle 이 실행되지 않도록 함
           onRemove(id)}
         }>&times;</div>
-        <div className={`todo-text ${checked && 'checked'}`}>
+        {/* 1. 조건부렌더링 : check되면 .checked 적용되게 */}
+        <div ________________________________________>
           <div>{text}</div>
         </div>
         {
